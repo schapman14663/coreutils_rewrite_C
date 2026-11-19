@@ -12,7 +12,8 @@ inspecting files and data operations, then directory operations.
 - [ ] echo
 - [ ] cat
 - [ ] head 
-- [ ] tail 
+- [ ] tail
+- [ ] pwd
 
 ## Inspecting Files:
 
