@@ -4,5 +4,6 @@
 #include <stdlib.h>
 
 int echo_clone(char *args[]);
+int pwd_clone(char *args[]);
 
 #endif

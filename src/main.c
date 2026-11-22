@@ -4,5 +4,7 @@ int main() {
   char *test_echo1[] = {"This\n", "is\r",   "a\t",       "test\v", "of",
                         "the\a",  "echo\\", "function!", NULL};
   echo_clone(test_echo1);
+
+  pwd_clone(test_echo1);
   return 0;
 }
