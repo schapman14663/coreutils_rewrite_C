@@ -7,8 +7,11 @@
 
 #include <fcntl.h>
 #include <stddef.h>
+#include <unistd.h>
 
 int cat_clone(char *args[]) {
+  char buf[4096];
+  long long bytes_read;
 
   int file = 0;
   while (args[file] != NULL) {
@@ -19,7 +22,17 @@ int cat_clone(char *args[]) {
 
     int fd = open(args[file], O_RDONLY);
 
-    read(fd, buf, size);
+    while ((bytes_read = read(fd, buf, sizeof(buf))) > 0) {
+      if (write(STDOUT_FILENO, buf, bytes_read) == -1) {
+        close(fd);
+        return -1;
+      }
+    }
+    close(fd);
+
+    if (bytes_read == -1) {
+      return -1;
+    }
   }
   return 0;
 }
