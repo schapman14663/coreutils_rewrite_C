@@ -33,6 +33,7 @@ int cat_clone(char *args[]) {
     if (bytes_read == -1) {
       return -1;
     }
+    file++;
   }
   return 0;
 }

@@ -5,5 +5,6 @@
 
 int echo_clone(char *args[]);
 int pwd_clone(char *args[]);
+int cat_clone(char *args[]);
 
 #endif
